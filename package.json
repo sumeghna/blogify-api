@@ -9,5 +9,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumeghna/blogify-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sumeghna/blogify-api/issues"
+  },
+  "homepage": "https://github.com/sumeghna/blogify-api#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+  "scripts":{
+    "start":"node src/index.js" ,
+    "dev": "nodemon src/index.js"
+  }
 }
