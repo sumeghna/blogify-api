@@ -3,9 +3,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllPosts } = require('../controllers/posts.controller');
+const { getAllPosts } = require('../controllers/posts.controller');  // ✔ correct path
 
-// GET /api/v1/posts
 router.get('/', getAllPosts);
 
 module.exports = router;

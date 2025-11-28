@@ -1,6 +1,5 @@
 // src/controllers/posts.controller.js
 
-// Controller function to handle GET all posts
 const getAllPosts = (req, res) => {
   return res.json({
     success: true,
@@ -8,6 +7,4 @@ const getAllPosts = (req, res) => {
   });
 };
 
-module.exports = {
-  getAllPosts,
-};
+module.exports = { getAllPosts };

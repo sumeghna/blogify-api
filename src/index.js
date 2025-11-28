@@ -1,13 +1,12 @@
-const express = require("express");
+// src/index.js
+
+const express = require('express');
 const app = express();
 
-const postsRouter = require("./routes/posts.routes");
+const postsRouter = require('./routes/posts.routes'); // ✔ correct path
 
 app.use(express.json());
+app.use('/api/v1/posts', postsRouter);
 
-// Mount the router
-app.use("/api/v1/posts", postsRouter);
-
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
+const PORT = 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
