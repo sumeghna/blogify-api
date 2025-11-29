@@ -1,10 +1,15 @@
-// src/routes/posts.routes.js
-
+// routes/posts.routes.js
 const express = require('express');
 const router = express.Router();
 
-const { getAllPosts } = require('../controllers/posts.controller');  // ✔ correct path
+const postController = require('../controllers/posts.controller');
 
-router.get('/', getAllPosts);
+// collection route
+router.get('/', (req, res) => {
+  res.send('List of posts');
+});
+
+// dynamic single-post route
+router.get('/:postId', postController.getPostById); // keep this after '/'[web:40][web:41][web:54]
 
 module.exports = router;
