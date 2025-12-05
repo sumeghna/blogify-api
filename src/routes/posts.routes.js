@@ -2,14 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
-const postController = require('../controllers/posts.controller');
+const {
+  getAllPosts,
+  getPostById
+} = require('../controllers/posts.controller');
 
-// collection route
-router.get('/', (req, res) => {
-  res.send('List of posts');
-});
+// GET /api/v1/posts  → must use standardized JSON envelope
+router.get('/', getAllPosts);
 
-// dynamic single-post route
-router.get('/:postId', postController.getPostById); // keep this after '/'[web:40][web:41][web:54]
+// GET /api/v1/posts/:postId → must use standardized JSON envelope
+router.get('/:postId', getPostById);
 
 module.exports = router;
