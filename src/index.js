@@ -2,8 +2,8 @@
 
 const express = require('express');
 const app = express();
-
-const postsRouter = require('./routes/posts.routes'); // ✔ correct path
+app.use(express.json());
+const postsRouter = require('./routes/posts.routes'); //  correct path
 
 app.use(express.json());
 app.use('/api/v1/posts', postsRouter);
