@@ -3,10 +3,11 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const postsRouter = require('./routes/posts.routes'); //  correct path
 
-app.use(express.json());
-app.use('/api/v1/posts', postsRouter);
+
+
+const mainRouter=require('./routes/index.js');
+app.use("/api/v1",mainRouter);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
