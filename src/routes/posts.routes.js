@@ -1,16 +1,23 @@
-// routes/posts.routes.js
 const express = require('express');
 const router = express.Router();
 
 const {
+  createPost,
   getAllPosts,
-  getPostById
+  getPostById,
+  updatePostById,
+  deletePostById,
+  getAllPostsWithAuthors
 } = require('../controllers/posts.controller');
 
-// GET /api/v1/posts  → must use standardized JSON envelope
-router.get('/', getAllPosts);
+// STATIC ROUTE MUST COME FIRST
+router.get('/with-authors', getAllPostsWithAuthors);
 
-// GET /api/v1/posts/:postId → must use standardized JSON envelope
-router.get('/:postId', getPostById);
+// CRUD ROUTES
+router.post('/', createPost);
+router.get('/', getAllPosts);
+router.get('/:id', getPostById);
+router.patch('/:id', updatePostById);
+router.delete('/:id', deletePostById);
 
 module.exports = router;

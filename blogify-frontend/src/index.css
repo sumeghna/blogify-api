@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: white;
+}
+
+/* main page layout */
+.page {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* page title */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+/* list layout */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* card */
+.card {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 18px;
+  border: 1px solid #e5e5e5;
+}
+
+/* title inside card */
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* subtitle text */
+.card-sub {
+  font-size: 14px;
+  color: #555;
+}
+
