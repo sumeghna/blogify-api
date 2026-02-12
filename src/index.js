@@ -2,6 +2,7 @@ require('dotenv').config(); // MUST be first
 
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.routes');
@@ -11,8 +12,15 @@ const errorHandler = require('./middlewares/errorHandler');
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ CORS configuration (important for cookies)
+app.use(cors({
+  origin: 'http://localhost:3000', // your frontend URL
+  credentials: true
+}));
+
 app.use(express.json());
+app.use(cookieParser()); // ✅ required for reading cookies
 
 app.use('/api/auth', authRoutes);
 app.use('/api/upload', uploadRoutes);
